@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
 
 * {
@@ -32,11 +32,11 @@ footer div {
 }
 
 body {
-    background-color: white;
+    background-color: rgba(252, 238, 238, 0.877);
     letter-spacing: .1em;
     font-weight: lighter;
     font-family: 'sackersGothic-light';
-    font-size: 20px;
+    font-size: 21px;
     color: black;
     font-family: 'Tinos', serif;
 }
@@ -141,23 +141,33 @@ article {
     line-height: 30px;
 }
 
-article button {
+ button {
     padding: 10px 10px;
 }
 
-article button:hover {
+ button:hover {
     background-color: black;
     color: white;
+}
+
+.button-checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
 }
 
 .containercart {
     display: flex;
     flex-direction: column;
-}
-
-table {
-        margin-left: auto;
-        margin-right: auto;
+    font-size: 13px;
+    max-width: 20%;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 h4 {

@@ -12,27 +12,26 @@
 <body>
 
     <div class="cartlogo1">
-        <img class="cartlogo" src="img/like.png" alt="cart">
-        <img class="cartlogo" src="img/cart1.png" alt="cart">
-        
+        <!-- <img class="cartlogo" src="img/like.png" alt="cart"> -->
+        <img class="cartlogo" src="img/cart1.png" alt="cart">  
     </div>
+
+
 <div class="containergrid">
     <header>
-            
             <nav>
                 <ul>
                     <li>
-                        <a href="">INICIO</a>
+                        <a href="#home">HOME</a>
                     </li>
                     <li>
-                        <a href="">PRODUCTOS</a>
+                        <a href="">SALE</a>
                     </li>
                     <li>
-                        <a href="">CARRITO</a>
+                        <a href="#cart">CART</a>
                     </li>
                 </ul>
             </nav>    
-            
     </header>
 
 <!-- <section class="inicio">
@@ -40,82 +39,85 @@
  </section> --> 
 
 
+<section class="gridproducts" id="home">
 
+</section>
     <!-- Section PRODUCTOS -->
-<section class="gridproducts">
+<!-- <section class="gridproducts" id="home">
 
     <article class="grid1">
         <img src="img/img1.jpg" alt="">
-        <h6> Descripción 1</h6>
-            <p>$000</p>
-                <button>COMPRAR</button>
+        <h6> DESCRIPTION</h6>
+        <p>$000</p>
+        <button>BUY</button>
     </article>
     
 
     <article class="grid2">
         <img src="img/img2.jpg" alt="">
-        <h6> Descripción 2</h6>
-            <p>$000</p>
-                <button>COMPRAR</button>
+        <h6> DESCRIPTION</h6>
+        <p>$000</p>
+        <button>BUY</button>
     </article>
 
     <article class="grid3">
         <img src="img/img3.jpg" alt="">
-        <h6> Descripción 3</h6>
-            <p>$000</p>
-                <button>COMPRAR</button>
+        <h6>DESCRIPTION</h6>
+        <p>$000</p>
+        <button>BUY</button>
     </article>
 
     <article class="grid4">
         <img src="img/img4.jpg" alt="">
-            <h6> Descripción 4</h6>
-                <p>$000</p>
-                    <button>COMPRAR</button>
+        <h6> DESCRIPTION </h6>
+        <p>$000</p>
+        <button>BUY</button>
     </article>
 
     <article class="grid5">
         <img src="img/img5.jpg" alt="">
-        <h6> Descripción 5</h6>
-            <p>$000</p>
-                <button>COMPRAR</button>
+        <h6> DESCRIPTION</h6>
+        <p>$000</p>
+        <button>BUY</button>
     </article>
 
     <article class="grid6">
         <img src="img/img6.jpg" alt="">
-        <h6> Descripción 6</h6>
-            <p>$000</p>
-                <button>COMPRAR</button>
+        <h6> DESCRIPTION </h6>
+        <p>$000</p>
+        <button>BUY</button>
     </article>
-</section>
+</section> -->
 
 
-<section class="containercart">
+<section id="cart" class="containercart">
     <!-- Section CARRITO -->
 
-    <h4>
-        MI CARRITO DE COMPRAS
-    </h4>
+    <h4>MY CART</h4>
     <table>
         <tr>
             <th>
-                PRODUCTO
+                ITEMS
             </th>
             <th>
-                DESCRIPCION
+                DESCRIPTION
             </th>
             <th>
-                CANTIDAD
+                QTY
             </th>
             <th>
                 SUBTOTAL
             </th>
+            <th>
+                DELETE
+            </th>
         </tr>
         <tr>
             <td>
-                IMAGEN
+                IMG
             </td>
             <td>
-                CAMPERA
+                PRODUCT
             </td>
             <td>
                 1
@@ -124,17 +126,26 @@
             <td>
                 $7500
             </td>
+            <td>
+                <button>
+                    X
+                </button>
+            </td>
         </tr>
 
 
     </table>
+
+<button class="button-checkout">PROCEED TO CHECKOUT</button>
+    
 </section>
+
 
 <footer class="footer">
     <div>
-        <p>REDES</p>
-        <p>CONTACTO</p>
-        <p>SUCURSALES</p>
+        <p>SOCIAL</p>
+        <p>CONTACT</p>
+        <p>ABOUT</p>
     </div>
 </footer>
 </div>

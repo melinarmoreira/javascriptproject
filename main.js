@@ -270,63 +270,44 @@
 
 
 
-// let clients = [
-//         {id:1, name: 'name1', age: 38},
-//         {id:2, name: 'name2', age: 22},
-//         {id:3, name: 'name3', age: 56},
-// ]
-
-// .sort();
-// console.log(clients)
-
-// let Clients = [
-//         { name: 'Edward', age: 21 },
-//         { name: 'Sharpe', age: 37 },
-//         { name: 'And', age: 45 },
-//         { name: 'The', age: 12 },
-//         { name: 'Magnetic', age: 13 },
-//         { name: 'Zeros', age: 37 }
-// ];
-
-// let ClientsOrd = [];
-
-
-// // console.log(Clients[0].age)
-
-// // Clients.sort(function(a,b){return a - b;});
-
-// function order(a,b) {
-
-//         if (a < b) {
-//                 ClientsOrd.push(b)
-//         }
-// }
-
-// console.log(ClientsOrd)
-
-// var arr = [ 40, 1, 5, 200 ];
-// arr.sort(function(a,b){return a - b;});
-//   // [ 1, 5, 40, 200 ]
-// console.log(arr)
 
 
 
-// var arreglo=[
-//         {id:1,nombre:'Juan', age: 65},
-//         {id:2,nombre:'María',age: 12},
-//         {id:3,nombre:'Pedro',age: 28}
-//       ];
+
+let html = '';
+
+let products = [
+
+    {id:01, description:'Sweatshirt', price: 4000, size: 'M', img: 'img/img1.jpg', class: 'grid1'},
+    {id:02, description: 'Cardigan', price: 5500, size: 'U', img: 'img/img2.jpg',  class: 'grid2'},
+    {id:03, description: 'Skirt', price: 3800, size: 'S', img: 'img/img3.jpg',  class: 'grid3'},
+    {id:04, description: 'Dress', price: 7800, size: 'L', img: 'img/img4.jpg',  class: 'grid4'},
+    {id:05, description: 'Blouse', price: 2900, size: 'M', img: 'img/img5.jpg', class: 'grid5'},
+    {id:06, description: 'Purse', price: 4900, size:'U', img:'img/img6.jpg', class:'grid6'},
+
+];
+
+let container = document.getElementById('home');
+
+products.forEach(product => {
+
+    html +=
+    `<article class="${product.class}">
+    <img src="${product.img}" alt="${product.id}">
+    <h6>${product.description.toUpperCase()}</h6>
+    <p>$${product.price}</p>
+    <button>BUY</button>
+    </article>`
+    
+}); 
+
+container.innerHTML = html;
 
 
-// //         age.sort(function(a,b) {
-// //               return a-b;
-// //       }
-// //       )
 
 
-//       console.log(Object.values(arreglo.age));
 
-//       console.log(arreglo)
+
 
 
 
