@@ -261,3 +261,6 @@ td, th {
     }
 }
 
+.form {
+    border: solid black 1px;
+}

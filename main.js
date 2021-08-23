@@ -268,24 +268,20 @@
 
 
 
-
-
-
-
-
-
 let html = '';
 
 let products = [
 
-    {id:01, description:'Sweatshirt', price: 4000, size: 'M', img: 'img/img1.jpg', class: 'grid1'},
-    {id:02, description: 'Cardigan', price: 5500, size: 'U', img: 'img/img2.jpg',  class: 'grid2'},
-    {id:03, description: 'Skirt', price: 3800, size: 'S', img: 'img/img3.jpg',  class: 'grid3'},
-    {id:04, description: 'Dress', price: 7800, size: 'L', img: 'img/img4.jpg',  class: 'grid4'},
-    {id:05, description: 'Blouse', price: 2900, size: 'M', img: 'img/img5.jpg', class: 'grid5'},
-    {id:06, description: 'Purse', price: 4900, size:'U', img:'img/img6.jpg', class:'grid6'},
+    {id:0, description:'Sweatshirt', price: 4000, size: 'M', img: 'img/img1.jpg', class: 'grid1'},
+    {id:1, description: 'Cardigan', price: 5500, size: 'U', img: 'img/img2.jpg',  class: 'grid2'},
+    {id:2, description: 'Skirt', price: 3800, size: 'S', img: 'img/img3.jpg',  class: 'grid3'},
+    {id:3, description: 'Dress', price: 7800, size: 'L', img: 'img/img4.jpg',  class: 'grid4'},
+    {id:4, description: 'Blouse', price: 2900, size: 'M', img: 'img/img5.jpg', class: 'grid5'},
+    {id:5, description: 'Purse', price: 4900, size:'U', img:'img/img6.jpg', class:'grid6'},
 
 ];
+
+//Renderizar productos del array "products"
 
 let container = document.getElementById('home');
 
@@ -296,19 +292,46 @@ products.forEach(product => {
     <img src="${product.img}" alt="${product.id}">
     <h6>${product.description.toUpperCase()}</h6>
     <p>$${product.price}</p>
-    <button>BUY</button>
+    <button class="button-buy" value="${product.id}">BUY</button>
     </article>`
     
 }); 
 
 container.innerHTML = html;
 
+let cart = [];
+console.log(cart, 'cart vacio')
+
+let buyButtons = document.getElementsByClassName('button-buy');
+// console.log(buyButtons);
+
+//Bucle botones de comprar
+for (const button of buyButtons) {
+    button.addEventListener('click', function(event) {
+    // console.log('click comprar');
 
 
+    let selectedProduct = products.find( x => x.id == event.target.value)
+    cart.push(selectedProduct);
+    console.log(cart, ' carrito dsp del selectedprod');
 
+})};
 
+//Botón de borrar
 
+let deleteButton = document.querySelector('.delete') 
 
+deleteButton.addEventListener('click', function(event) {
+    cart.pop();
+    console.log(cart, 'dsp del pop')
+});
+
+// Boton de checkout
+let checkoutButton = document.querySelector('.button-checkout')
+
+checkoutButton.addEventListener('click', function(event) {
+    console.log('checkout');
+});
 
 
 
