@@ -143,6 +143,7 @@ article {
 
  button {
     padding: 10px 10px;
+    margin: 10px 0px;
 }
 
  button:hover {
@@ -263,4 +264,17 @@ td, th {
 
 .form {
     border: solid black 1px;
+}
+
+.imgcart {
+
+    max-width: 10px;
+    
+}
+
+#total {
+    font-size: 15px;
+    padding: 20px 10px;
+    width: 100%;
+
 }

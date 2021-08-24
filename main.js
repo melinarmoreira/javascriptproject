@@ -268,6 +268,46 @@
 
 
 
+//Funcion que renderiza el carrito
+function renderCart (product) {
+
+    let cartindex = document.querySelector('table');
+    // console.log(cartindex);
+
+    let row = document.createElement('tr');
+
+    let td = document.createElement('td');
+    td.innerHTML = `<img class="imgcart" src="${product.img}" alt="${product.id}"`;
+    row.appendChild(td);
+
+    td = document.createElement('td');
+    td.innerHTML = product.description;
+    row.appendChild(td);
+
+    td = document.createElement('td');
+    td.innerHTML = 1;
+    
+    row.appendChild(td);
+
+    td = document.createElement('td');
+    td.innerHTML = product.price;
+    row.appendChild(td);
+
+    td = document.createElement('td');
+    td.innerHTML = `<button class='delete' value="${product.id}">X</button>`;
+    row.appendChild(td);
+
+    cartindex.appendChild(row);
+}
+
+function renderDelete () {
+
+    let cartindex = document.querySelector('table');
+    let row = document.querySelector('tr');
+    cartindex.removeChild(row);
+}
+
+
 let html = '';
 
 let products = [
@@ -284,7 +324,6 @@ let products = [
 //Renderizar productos del array "products"
 
 let container = document.getElementById('home');
-
 products.forEach(product => {
 
     html +=
@@ -299,44 +338,78 @@ products.forEach(product => {
 
 container.innerHTML = html;
 
+
 let cart = [];
-console.log(cart, 'cart vacio')
+console.log(cart, 'Su carrito está vacio');
 
 let buyButtons = document.getElementsByClassName('button-buy');
 // console.log(buyButtons);
 
-//Bucle botones de comprar
+    //Bucle botones de comprar
 for (const button of buyButtons) {
-    button.addEventListener('click', function(event) {
-    // console.log('click comprar');
 
+        button.addEventListener('click', function(event) {
 
-    let selectedProduct = products.find( x => x.id == event.target.value)
-    cart.push(selectedProduct);
-    console.log(cart, ' carrito dsp del selectedprod');
+            //Agregar al carrito productos y renderizarlos
+            let selectedProduct = products.find( x => x.id == event.target.value);
+            cart.push(selectedProduct);
+            // console.log(cart, ' carrito dsp del selectedprod');
+            renderCart(cart[cart.length - 1]);
+    
 
-})};
+            //Eliminar productos del cart, y renderizarlo
+            let deleteButton = document.getElementsByClassName("delete");
 
-//Botón de borrar
+                for(const button1 of deleteButton) {
+                
+                    button1.addEventListener('click', (e) => {
 
-let deleteButton = document.querySelector('.delete') 
+                    e.stopImmediatePropagation();
+    
+                let deletedProduct = products.find( x => x.id == e.target.value);
+                cart = cart.filter((i) => i !== deletedProduct);
+                ////
+                console.log('se elimino ', deletedProduct);
+                console.log(cart);
+                e.target.parentNode.parentNode.remove()
+            }
+)
+}}
+)};
 
-deleteButton.addEventListener('click', function(event) {
-    cart.pop();
-    console.log(cart, 'dsp del pop')
-});
 
 // Boton de checkout
-let checkoutButton = document.querySelector('.button-checkout')
+let checkoutButton = document.querySelector('.button-checkout');
 
-checkoutButton.addEventListener('click', function(event) {
-    console.log('checkout');
+checkoutButton.addEventListener('click', function(e) {
+    
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+
+        total += cart[i].price;
+        console.log(total);
+    }
+
+    let divTotal = document.getElementById('total');
+    let pTotal = document.createElement('p');
+    divTotal.appendChild(pTotal);
+
+    pTotal.innerHTML = `<p>El total a abonar es $${total}</p>`
+
 });
 
 
+//boton para vaciar carrito
+let emptyButton = document.querySelector('.empty-cart');
+// console.log(emptyButton);
 
+emptyButton.addEventListener('click', function(e) {
 
+            cart = [];
+            console.log('No hay items en el carrito', cart);
 
+})
 
 
 
