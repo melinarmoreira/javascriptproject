@@ -266,7 +266,46 @@
 
 // paymentMethod(cart.getTotal());
 
+// let contador = 0;
+// function contadorCart (operacion) {
 
+//     switch(operacion) {
+
+//         case operacion === 'suma':
+//             contador = contador + 1;
+        
+//         case operacion === 'resta':
+//             contador = contador - 1;
+
+//         case operacion === 'vacia':
+//             contador = 0;
+        
+//     }
+
+// }
+
+//render contador
+
+function renderAccumulator(accumulator) {
+    let contadorRender = document.getElementById('contador');
+    contadorRender.innerHTML = `<p class="contador-style">
+                                ${accumulator}
+                                </p>`;
+}
+
+//Renderizar nombre
+let userName = prompt('Ingrese su nombre para comprar');
+sessionStorage.setItem('username', JSON.stringify(userName));
+let renderUserName = JSON.parse(sessionStorage.getItem('username'));
+
+
+let welcome = document.querySelector('.welcome');
+let pname = document.createElement('p');
+welcome.appendChild(pname);
+
+pname.innerHTML = `Welcome, ${renderUserName.toUpperCase()}`; 
+
+//
 
 //Funcion que renderiza el carrito
 function renderCart (product) {
@@ -277,7 +316,7 @@ function renderCart (product) {
     let row = document.createElement('tr');
 
     let td = document.createElement('td');
-    td.innerHTML = `<img class="imgcart" src="${product.img}" alt="${product.id}"`;
+    td.innerHTML = `<img class="imgcart" src="${product.img}" alt="${product.id}">`;
     row.appendChild(td);
 
     td = document.createElement('td');
@@ -301,14 +340,13 @@ function renderCart (product) {
 }
 
 function renderDelete () {
-
     let cartindex = document.querySelector('table');
     let row = document.querySelector('tr');
     cartindex.removeChild(row);
 }
 
 
-let html = '';
+
 
 let products = [
 
@@ -322,7 +360,7 @@ let products = [
 ];
 
 //Renderizar productos del array "products"
-
+let html = '';
 let container = document.getElementById('home');
 products.forEach(product => {
 
@@ -340,53 +378,58 @@ container.innerHTML = html;
 
 
 let cart = [];
+let accumulator = 0;
 console.log(cart, 'Su carrito está vacio');
 
 let buyButtons = document.getElementsByClassName('button-buy');
-// console.log(buyButtons);
-
     //Bucle botones de comprar
 for (const button of buyButtons) {
 
-        button.addEventListener('click', function(event) {
+        button.addEventListener('click', function (event) {
 
+
+            
             //Agregar al carrito productos y renderizarlos
             let selectedProduct = products.find( x => x.id == event.target.value);
             cart.push(selectedProduct);
-            // console.log(cart, ' carrito dsp del selectedprod');
             renderCart(cart[cart.length - 1]);
-    
-
+            accumulator ++;
+            
+            renderAccumulator(accumulator);
+            
             //Eliminar productos del cart, y renderizarlo
+                
+            
             let deleteButton = document.getElementsByClassName("delete");
 
                 for(const button1 of deleteButton) {
                 
-                    button1.addEventListener('click', (e) => {
+                    button1.addEventListener('click', function (e) {
 
                     e.stopImmediatePropagation();
     
-                let deletedProduct = products.find( x => x.id == e.target.value);
-                cart = cart.filter((i) => i !== deletedProduct);
+                    let deletedProduct = products.find( x => x.id == e.target.value);
+                    cart = cart.filter((i) => i !== deletedProduct);
                 ////
-                console.log('se elimino ', deletedProduct);
-                console.log(cart);
-                e.target.parentNode.parentNode.remove()
-            }
-)
-}}
-)};
+                    console.log('se elimino ', deletedProduct);
+                    console.log(cart);
+                    e.target.parentNode.parentNode.remove();
+
+                    accumulator --;
+                    renderAccumulator(accumulator);
+            })}})
+
+}
 
 
 // Boton de checkout
-let checkoutButton = document.querySelector('.button-checkout');
+// let checkoutButton = document.querySelector('.button-checkout');
 
-checkoutButton.addEventListener('click', function(e) {
-    
+$(".button-checkout").one( "click", function () {
+
     let total = 0;
 
     for (let i = 0; i < cart.length; i++) {
-
         total += cart[i].price;
         console.log(total);
     }
@@ -395,21 +438,36 @@ checkoutButton.addEventListener('click', function(e) {
     let pTotal = document.createElement('p');
     divTotal.appendChild(pTotal);
 
-    pTotal.innerHTML = `<p>El total a abonar es $${total}</p>`
+    pTotal.innerHTML = `<p>El total a abonar es $${total}</p>`;
 
 });
 
 
-//boton para vaciar carrito
 let emptyButton = document.querySelector('.empty-cart');
-// console.log(emptyButton);
-
-emptyButton.addEventListener('click', function(e) {
+emptyButton.addEventListener('click', function() {
 
             cart = [];
-            console.log('No hay items en el carrito', cart);
+            // console.log('No hay items en el carrito', cart);
 
-})
+        //Vaciar carrito
+        let td = document.getElementsByTagName('td');
+        // console.log(td);
+
+        for (const td1 of td) {
+            td1.parentNode.remove();
+        }
+        
+        
+        let noItems = document.querySelector('#noItems');
+        let pItems = document.createElement('p');
+        noItems.appendChild(pItems);
+        pItems.innerText = `No hay items en el carrito`;
+        
+
+        accumulator = 0;
+        renderAccumulator(accumulator);
+});
+
 
 
 

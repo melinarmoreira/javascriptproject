@@ -11,9 +11,18 @@
 </head>
 <body>
 
-    <div class="cartlogo1">
-        <!-- <img class="cartlogo" src="img/like.png" alt="cart"> -->
-        <img class="cartlogo" src="img/cart1.png" alt="cart">  
+    <div id="cartlogo" class="cartlogo1">
+        <div class="welcome">
+            <!--name-->
+        </div>
+
+        <a href="#cart">
+            <img class="cartlogo" src="img/cart1.png" alt="cart">
+            <span id="contador">
+            <!--contador-->
+            </span>
+            </img>
+        </a>
     </div>
 
 
@@ -134,9 +143,12 @@
             </td>
         </tr> -->
 
-    <!-- </tbody> -->
+    
     </table>
 
+    <div id="noItems">
+
+    </div>
 
     <!-- <p>El total a abonar es $ </p> -->
 
@@ -150,7 +162,7 @@
 
 <div id="total">
 
-    <!-- Dinámico -->
+    <!-- total dinámico -->
 
 </div>
     
@@ -161,22 +173,22 @@
     <form>
         <div>
             <label for="name"> NAME:
-                <input type="text">
+                <input type="text" class="input-name">
             </label>
         </div>
         <div>
             <label for="card"> CARD NUMBER:
-                <input type="number">
+                <input type="number" class="input-card">
             </label>
         </div>
         <div>
             <label for="expiration"> EXPIRATION
-                <input type="date">
+                <input type="date" class="input-expiration">
             </label>
         </div>
         <div>
             <label for="cvv"> CVV
-                <input type="number">
+                <input type="number" class="input-cv">
             </label>
         </div>
 
@@ -197,7 +209,17 @@
 </footer>
 </div>
 
-<script src="main.js"></script>
+
+<script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+</script>
+
+<script
+    src="main.js">
+</script>
+
 </body>
 </html>
 

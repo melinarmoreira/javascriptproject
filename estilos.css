@@ -76,12 +76,17 @@ a {
     /* align-items: flex-end;  */
     display: flex;
     justify-content: flex-end;
+    
 
 }
 .cartlogo {
     max-width: 35px;
-    padding: 20px 20px;
-
+    padding: 20px 15px;
+}
+.welcome {
+    
+    padding-top: 35px;
+    font-size: 15px;
 }
 
 .gridproducts {
@@ -218,7 +223,7 @@ td, th {
                                 'footer';
     
     }
-  
+
     .grid1{
         grid-area: grid1;
     }
@@ -267,14 +272,31 @@ td, th {
 }
 
 .imgcart {
-
-    max-width: 10px;
-    
+    max-width: 100%;
 }
+
 
 #total {
     font-size: 15px;
-    padding: 20px 10px;
+    padding: 20px 50px;
     width: 100%;
+    display: inline;
+}
 
+#contador {
+    top: 0px;
+    display: inline;
+}
+
+.contador-style {
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    border-radius: 100%;
+    padding: 2px 0px;
+    height: fit-content;
+    width: 20px;
+    margin-top: 0px;
+    margin-right: 0px;
 }
