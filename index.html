@@ -43,60 +43,9 @@
             </nav>    
     </header>
 
-<!-- <section class="inicio">
- Section INICIO 
- </section> --> 
-
-
 <section class="gridproducts" id="home">
 
 </section>
-    <!-- Section PRODUCTOS -->
-<!-- <section class="gridproducts" id="home">
-
-    <article class="grid1">
-        <img src="img/img1.jpg" alt="">
-        <h6> DESCRIPTION</h6>
-        <p>$000</p>
-        <button>BUY</button>
-    </article>
-    
-
-    <article class="grid2">
-        <img src="img/img2.jpg" alt="">
-        <h6> DESCRIPTION</h6>
-        <p>$000</p>
-        <button>BUY</button>
-    </article>
-
-    <article class="grid3">
-        <img src="img/img3.jpg" alt="">
-        <h6>DESCRIPTION</h6>
-        <p>$000</p>
-        <button>BUY</button>
-    </article>
-
-    <article class="grid4">
-        <img src="img/img4.jpg" alt="">
-        <h6> DESCRIPTION </h6>
-        <p>$000</p>
-        <button>BUY</button>
-    </article>
-
-    <article class="grid5">
-        <img src="img/img5.jpg" alt="">
-        <h6> DESCRIPTION</h6>
-        <p>$000</p>
-        <button>BUY</button>
-    </article>
-
-    <article class="grid6">
-        <img src="img/img6.jpg" alt="">
-        <h6> DESCRIPTION </h6>
-        <p>$000</p>
-        <button>BUY</button>
-    </article>
-</section> -->
 
 
 <section id="cart" class="containercart">
@@ -106,94 +55,61 @@
     <table id="cart-index">
         <!-- <tbody id="tbody"> -->
         <tr>
-            <th>
-                ITEMS
-            </th>
-            <th>
-                DESCRIPTION
-            </th>
-            <th>
-                QTY
-            </th>
-            <th>
-                SUBTOTAL
-            </th>
-            <th>
-                DELETE
-            </th>
+            <th>ITEMS</th>
+            <th>DESCRIPTION</th>
+            <th>QTY</th>
+             <th>SUBTOTAL</th>
+            <th>DELETE</th>
         </tr>
-        <!-- <tr>
-            <td>
-                IMG
-            </td>
-            <td>
-                PRODUCT
-            </td>
-            <td>
-                1
-            </td>
-
-            <td>
-                $7500
-            </td>
-            <td>
-                <button class="delete">
-                    X
-                </button>
-            </td>
-        </tr> -->
-
-    
+            
     </table>
 
-    <div id="noItems">
-
-    </div>
-
-    <!-- <p>El total a abonar es $ </p> -->
-
-<button class="button-checkout">PROCEED TO CHECKOUT</button> 
-
-
-<button class="empty-cart">EMPTY CART</button> 
-<p>Clic on "Empty cart" to remove all items from your cart</p>
-
-
-
-<div id="total">
-
-    <!-- total dinámico -->
+<div id="noItems">
 
 </div>
-    
+<!-- <p>El total a abonar es $ </p> -->
+
+<button class="button-checkout">PROCEED TO CHECKOUT</button> 
+<button class="empty-cart">EMPTY CART</button> 
+<p>Clic on "Empty cart" to remove all items from your cart</p>
+<div id="total">
+<!-- total dinámico -->
+</div>  
 </section>
 
 
 <section class="form">
-    <form>
+    <form action="php" method="GET">
         <div>
             <label for="name"> NAME:
-                <input type="text" class="input-name">
+                <input type="text" id="input-name">
+            </label>
+        </div>
+        <div>
+            <label for="email"> EMAIL:
+                <input type="email" id="input-email">
             </label>
         </div>
         <div>
             <label for="card"> CARD NUMBER:
-                <input type="number" class="input-card">
+                <input type="number" id="input-card">
             </label>
         </div>
         <div>
             <label for="expiration"> EXPIRATION
-                <input type="date" class="input-expiration">
+                <input type="date" id="input-expiration">
             </label>
         </div>
         <div>
             <label for="cvv"> CVV
-                <input type="number" class="input-cv">
+                <input type="number" id="input-cvv">
             </label>
         </div>
 
+        <div class="cuotas">
+        </div>
         <div>
-            <button type="submit">SUBMIT
+            <button type="submit" class="submit">SUBMIT
             </button>
         </div>
     </form>
@@ -203,8 +119,8 @@
 <footer class="footer">
     <div>
         <p>SOCIAL</p>
-        <p>CONTACT</p>
-        <p>ABOUT</p>
+            <p>CONTACT</p>
+                <p>ABOUT</p>
     </div>
 </footer>
 </div>
@@ -219,6 +135,8 @@
 <script
     src="main.js">
 </script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 </html>
