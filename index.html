@@ -16,14 +16,44 @@
             <!--name-->
         </div>
 
-        <a href="#cart">
-            <img class="cartlogo" src="img/cart1.png" alt="cart">
-            <span id="contador">
+        <!-- <a href="#cart"> -->
+            <div style="position:relative;">
+            <!-- <button id="button-cart"> -->
+                <img class="cartlogo" type="button" src="img/cart1.png" alt="cart">
+            <!-- </button> -->
+                <span id="contador">
+
+                </span>
             <!--contador-->
-            </span>
             </img>
-        </a>
+        </div>
+        <!-- </a> -->
     </div>
+
+
+<section id="cart" class="containercart" style="display:none;">
+    
+    
+    <table id="cart-index">
+
+        
+        <!-- <tbody id="tbody"> -->
+        <tr>
+            <th>ITEMS</th>
+            <th>DESCRIPTION</th>
+            <th>SUBTOTAL</th>
+            <th>DELETE</th>
+        </tr>
+
+    </table>
+
+<!-- <p>El total a abonar es $ </p> -->
+<div class="botones-section">
+    <a href="#form"><button class="button-checkout">CHECKOUT</button></a>
+<button class="empty-cart">EMPTY CART</button> 
+</div>
+
+</section> 
 
 
 <div class="containergrid">
@@ -34,10 +64,10 @@
                         <a href="#home">HOME</a>
                     </li>
                     <li>
-                        <a href="">SALE</a>
+                        <a href="#home">SALE</a>
                     </li>
                     <li>
-                        <a href="#cart">CART</a>
+                        <a type="button" id="cartMenu">CART</a>
                     </li>
                 </ul>
             </nav>    
@@ -47,14 +77,14 @@
 
 </section>
 
-
+<!-- 
 <section id="cart" class="containercart">
-    <!-- Section CARRITO -->
+    
 
     <h4>MY CART</h4>
     <table id="cart-index">
-        <!-- <tbody id="tbody"> -->
-        <tr>
+         <tbody id="tbody"> -->
+       <!-- <tr>
             <th>ITEMS</th>
             <th>DESCRIPTION</th>
             <th>QTY</th>
@@ -63,23 +93,22 @@
         </tr>
             
     </table>
-
-<div id="noItems">
+<div id="noItems"> 
 
 </div>
-<!-- <p>El total a abonar es $ </p> -->
+<p>El total a abonar es $ </p>
 
 <button class="button-checkout">PROCEED TO CHECKOUT</button> 
 <button class="empty-cart">EMPTY CART</button> 
 <p>Clic on "Empty cart" to remove all items from your cart</p>
 <div id="total">
-<!-- total dinámico -->
+total dinámico 
 </div>  
-</section>
+</section> -->
 
 
-<section class="form">
-    <form action="php" method="GET">
+<section class="form" style="display: none;">
+    <form action="php" id="form" method="GET">
         <div>
             <label for="name"> NAME:
                 <input type="text" id="input-name">
@@ -124,6 +153,7 @@
     </div>
 </footer>
 </div>
+
 
 
 <script
