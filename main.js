@@ -10,7 +10,7 @@ function renderAccumulator(accumulator) {
 
 
 
-$(document).ready( function() {
+// $(document).ready( function() {
 
     //Renderizar nombre
 
@@ -29,7 +29,7 @@ $(document).ready( function() {
 
     })
 
-})
+// })
 
 //Funcion que renderiza el carrito
 function renderCart (product) {
@@ -45,11 +45,6 @@ function renderCart (product) {
     td = document.createElement('td');
     td.innerHTML = product.description;
     row.appendChild(td);
-
-    // td = document.createElement('td');
-    // td.innerHTML = 1;
-    
-    // row.appendChild(td);
 
     td = document.createElement('td');
     td.innerHTML = product.price;
@@ -209,9 +204,6 @@ $('.submit').on("click", function(e) {
 
     }
 
-
-    
-
 });
 
 
@@ -248,11 +240,6 @@ emptyButton.addEventListener('click', function() {
             for (const td1 of td) {
                     td1.parentNode.remove();
             }
-            
-            // let noItems = document.querySelector('#noItems');
-            // let pItems = document.createElement('p');
-            // noItems.appendChild(pItems);
-    
 
             accumulator = 0;
             renderAccumulator(accumulator);
