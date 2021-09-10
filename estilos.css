@@ -270,10 +270,39 @@ td, th {
         justify-content: center;
         max-width: 20%;
     }
+
 }
 
 .form {
-    border: solid black 1px;
+    width: fit-content;
+    padding: 20px 20px;
+    background-color: white;
+    margin-left: 25%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    grid-area: pago;
+
+}
+
+h6 {
+    text-align: center;
+}
+input, select, option {
+    margin: 10px;
+    padding: 5px;
+    width: 80%;
+    font-size: 15px;
+}
+
+.submit {
+
+    margin-left: 35%;
+    padding: 10px 20px;
+
+}
+
+label {
+    margin: 10px;
 }
 
 .imgcart {
@@ -290,8 +319,6 @@ td, th {
 
 #contador {
     position: absolute;
-    /* right: 50px;
-    top: 50px; */
 }
 
 .contador-style {
@@ -331,3 +358,43 @@ img {
     height: fit-content;
 }
 
+.resumen-pedido {
+    background-color: white;
+    width: fit-content;
+    grid-area: resumen;
+    height: fit-content;
+    margin-top: 30%;
+    padding: 35px;
+    font-size: 15px;
+    line-height: 20px;
+    margin-right: 40%;
+}
+
+.flex-resumen {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+
+.iva-pedido {
+    color: gray;
+    font-size: 10px;
+}
+
+.pago-resumen {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "pago resumen";
+}
+
+.envio-gratis {
+    font-size: rgb(199, 79, 99);
+    font-style: italic;
+    font-size: 10px;
+}
+
+.h6-resumen {
+    padding: 15px;
+}

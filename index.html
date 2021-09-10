@@ -77,79 +77,70 @@
 
 </section>
 
-<!-- 
-<section id="cart" class="containercart">
-    
-
-    <h4>MY CART</h4>
-    <table id="cart-index">
-         <tbody id="tbody"> -->
-       <!-- <tr>
-            <th>ITEMS</th>
-            <th>DESCRIPTION</th>
-            <th>QTY</th>
-             <th>SUBTOTAL</th>
-            <th>DELETE</th>
-        </tr>
-            
-    </table>
-<div id="noItems"> 
-
-</div>
-<p>El total a abonar es $ </p>
-
-<button class="button-checkout">PROCEED TO CHECKOUT</button> 
-<button class="empty-cart">EMPTY CART</button> 
-<p>Clic on "Empty cart" to remove all items from your cart</p>
-<div id="total">
-total dinámico 
-</div>  
-</section> -->
-
-
+<section class="pago-resumen">
 <section class="form" style="display: none;">
-    <form action="php" id="form" method="GET">
+    <form id="form">
+        <h6>COMPLETA TU PAGO</h6>
         <div>
             <label for="name"> NAME:
-                <input type="text" id="input-name">
+                <input type="text" id="input-name" name="user" placeholder="Nombre y apellido">
             </label>
         </div>
         <div>
             <label for="email"> EMAIL:
-                <input type="email" id="input-email">
+                <input type="email" id="input-email" placeholder="example@abc.com">
             </label>
         </div>
         <div>
             <label for="card"> CARD NUMBER:
-                <input type="number" id="input-card">
+                <input type="number" id="input-card" placeholder="**** **** **** ****">
             </label>
         </div>
         <div>
             <label for="expiration"> EXPIRATION
-                <input type="date" id="input-expiration">
+                <input type="date" id="input-expiration" placeholder="01/21">
             </label>
         </div>
         <div>
             <label for="cvv"> CVV
-                <input type="number" id="input-cvv">
+                <input type="number" id="input-cvv" placeholder="123">
             </label>
         </div>
-
-        <div class="cuotas">
+        <div>
+            <label class="cuotas"> CUOTAS
+            </label>
         </div>
         <div>
-            <button type="submit" class="submit">SUBMIT
+            <button type="submit" class="submit">PAGAR
             </button>
         </div>
     </form>
 </section>
 
+<section class="resumen-pedido" style="display: none;">
+    <div class="flex-resumen">
+        <h6 class="h6-resumen">RESUMEN DEL PEDIDO</h6>
+        <p class="producto-pedido">
+        </p>
+        <p class="entrega-pedido">
+        </p>
+        <p class="total-pedido">
+        </p>
+        <p class="iva-pedido">
+        </p>
+        <p class="envio-gratis">
+        </p>
+    </div>
+</section>
+</section>
 
 <footer class="footer">
     <div>
         <p>SOCIAL</p>
             <p>CONTACT</p>
                 <p>ABOUT</p>
+                <button class="vendedor">Solicitar un vendedor</button>
+                <div class="vendedor-asignado"></div>
     </div>
 </footer>
 </div>
