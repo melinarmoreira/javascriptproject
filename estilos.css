@@ -398,3 +398,19 @@ img {
 .h6-resumen {
     padding: 15px;
 }
+
+.categories .sizes {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.filter {
+    max-width: 50%;
+    margin: 0px auto;
+}
+
+.render-size {
+    font-size: 10px;
+    color: gray;
+}

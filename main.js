@@ -8,6 +8,44 @@ function renderAccumulator(accumulator) {
                                 </p>`;
 }
 
+///FILTRO DE BUSQUEDA
+function filterSize(tag){
+
+    $(tag).on("click", function (e) {
+
+        let filterCheck = products.filter( ptalle => ptalle.size == e.target.value);
+        $('.gridproducts').empty();
+        filterCheck.forEach(element => {
+            $('.gridproducts').append(`
+            <article class="${element.class}">
+            <img src="${element.img}" alt="${element.id}">
+            <h6>${element.description.toUpperCase()}</h6>
+            <p class="render-size"> Talle ${element.size}</p>
+            <p>$${element.price}</p>
+            <button class="button-buy" value="${element.id}">BUY</button>
+            </article>`
+            )});
+        });
+}
+
+function filterDescription(tag){
+
+    $(tag).on("click", function (e) {
+        
+        let filterCheckDesc = products.filter(pdesc => pdesc.description == e.target.value);
+        $('.gridproducts').empty();
+        filterCheckDesc.forEach(elementdesc => {
+            $('.gridproducts').html(`
+            <article class="${elementdesc.class}">
+            <img src="${elementdesc.img}" alt="${elementdesc.id}">
+            <h6>${elementdesc.description.toUpperCase()}</h6>
+            <p class="render-size"> Talle ${elementdesc.size}</p>
+            <button class="button-buy" value="${elementdesc.id}">BUY</button>
+            </article>`
+            )});
+        });
+}
+
 function dataPedido () {
 
     $('.producto-pedido').append(` ${cart.length} PRODUCTOS $${total} `);
@@ -73,10 +111,10 @@ function renderDelete () {
     cartindex.removeChild(row);
 }
 
-let products = [
+const products = [
 
     {id:0, description:'Sweatshirt', price: 4000, size: 'M', img: 'img/img1.jpg', class: 'grid1'},
-    {id:1, description: 'Cardigan', price: 5500, size: 'U', img: 'img/img2.jpg',  class: 'grid2'},
+    {id:1, description: 'Cardigan', price: 5500, size: 'S', img: 'img/img2.jpg',  class: 'grid2'},
     {id:2, description: 'Skirt', price: 3800, size: 'S', img: 'img/img3.jpg',  class: 'grid3'},
     {id:3, description: 'Dress', price: 7800, size: 'L', img: 'img/img4.jpg',  class: 'grid4'},
     {id:4, description: 'Blouse', price: 2900, size: 'M', img: 'img/img5.jpg', class: 'grid5'},
@@ -101,13 +139,19 @@ products.forEach(product => {
 
 container.innerHTML = html;
 
+filterSize('#s');
+filterSize('#m');
+filterSize('#l');
+
+filterDescription('#blouse');
+filterDescription('#skirt');
+filterDescription('#purse');
 
 let cart = [];
 let accumulator = 0;
-console.log(cart, 'Su carrito está vacio');
 
 let buyButtons = document.getElementsByClassName('button-buy');
-    //Bucle botones de comprar
+//Bucle botones de comprar
 for (const button of buyButtons) {
 
         button.addEventListener('click', function (event) {
@@ -143,7 +187,7 @@ for (const button of buyButtons) {
 // Boton de checkout
 
 let total = 0;
-$(".button-checkout").one( "click", function (e) {
+$(".button-checkout").one("click", function (e) {
 
     e.preventDefault();
 
@@ -166,7 +210,7 @@ $(".button-checkout").one( "click", function (e) {
     }
 
     $(".containergrid").css("filter", "blur(0px)");
-    $(".form").slideDown(1500);
+    $(".form").slideDown(1000);
 
     dataPedido();
 
@@ -178,7 +222,6 @@ $(".button-checkout").one( "click", function (e) {
                             });
 
 });
-
 
 $('.submit').on("click", function(e) {
 
@@ -311,7 +354,7 @@ $('#cartMenu').on('click', function(e){
     }
 });
 
-$('.vendedor').one('click',function() {
+$('.vendedor').one('click', function() {
     const urlGET = 'https://hp-api.herokuapp.com/api/characters';
     $.get (urlGET, function(answer, estado) {
         if (estado === "success") {
@@ -320,3 +363,9 @@ $('.vendedor').one('click',function() {
         }
     })
 })
+
+
+
+
+
+
