@@ -142,7 +142,7 @@ for (const button of buyButtons) {
 // Boton de checkout
 
 let total = 0;
-$(".button-checkout").one("click", function (e) {
+$(".button-checkout").on("click", function (e) {
 
     e.preventDefault();
 
