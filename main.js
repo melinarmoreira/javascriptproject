@@ -142,7 +142,7 @@ for (const button of buyButtons) {
 // Boton de checkout
 
 let total = 0;
-$(".button-checkout").on("click", function (e) {
+$(".button-checkout").one("click", function (e) {
 
     e.preventDefault();
 
@@ -166,19 +166,21 @@ $(".button-checkout").on("click", function (e) {
     $(".containergrid").css("filter", "blur(0px)");
     $(".form").slideDown(1000);
 
-    dataPedido();
+    
 
     $('.resumen-pedido').css("display", "block");
-    $('.resumen-pedido').animate({
-                                fontSize: "15px",
-                                },
-                                2000);
+    dataPedido();
+    // $('.resumen-pedido').animate({
+    //                             fontSize: "15px",
+    //                             },
+    //                             2000);
+
 });
 
 $('.submit').on("click", function(e) {
 
     e.preventDefault();
-    let form = document.getElementById('form')
+    let form = document.getElementById('form');
     let data = new FormData(form);
     let infoData = JSON.stringify(data.get('username'));
 
@@ -252,6 +254,9 @@ emptyButton.addEventListener('click', function() {
                 }
             accumulator = 0;
             renderAccumulator(accumulator);
+            $('.resumen-pedido').css("display", "none");
+            $('#form').css("display", "none");
+
         }
     }
 );
