@@ -137,12 +137,12 @@ article {
     line-height: 30px;
 }
 
- button {
+button {
     padding: 10px 10px;
     margin: 10px 0px;
 }
 
- button:hover {
+button:hover {
     background-color: black;
     color: white;
 }
@@ -151,12 +151,12 @@ article {
     display: flex;
     flex-direction: row;
     align-content: center;
+    justify-content: space-around;
 }
 .button-checkout {
 
     max-width: 100px;
     font-size: 10px;
-
 }
 
 .empty-cart {
@@ -176,11 +176,7 @@ article {
     background-color: white;
     padding: 10px 10px;
     border-radius: 5%;
-    /* max-width: 10%; */
-    /* background-color: rosybrown; */
 }
-
-
 
 h4 {
     text-align: center;
@@ -247,7 +243,6 @@ td, th {
         grid-area: grid6;
     } 
     
-    
     header {
         grid-area: header;
         
@@ -265,10 +260,23 @@ td, th {
     footer {
         grid-area: footer;
         height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 100%;
+        /* display: flex; */
+        margin-left: auto;
+        margin-right: auto;
+        /* align-items: center;
+        justify-content: space-around; */
         max-width: 20%;
+        padding: 0px 20px;
+    }
+
+    .pago-resumen {
+        max-width: 50%;
+        max-height: 20%;
+    }
+
+    .containercart {
+        margin-left: auto;
     }
 
 }
@@ -281,7 +289,6 @@ td, th {
     margin-top: 10%;
     margin-bottom: 10%;
     grid-area: pago;
-
 }
 
 h6 {
@@ -295,10 +302,8 @@ input, select, option {
 }
 
 .submit {
-
     margin-left: 35%;
     padding: 10px 20px;
-
 }
 
 label {
@@ -308,7 +313,6 @@ label {
 .imgcart {
     max-width: 100%;
 }
-
 
 #total {
     font-size: 15px;
@@ -322,19 +326,21 @@ label {
 }
 
 .contador-style {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: normal;
     position: absolute;
     right: 32px; 
     top:10px;
-    font-size: 13px;
+    font-size: 12px;
     background-color: red;
     color: white;
     text-align: center;
     border-radius: 100%;
-    padding: 2px 0px;
+    padding: 1.5px 1px;
     height: fit-content;
     width: 20px;
     margin-bottom: 200px;
-    /* margin-left: 50%; */
+
 }
 
 .deletepic {
@@ -345,8 +351,9 @@ label {
     max-height: 25px;
 }
 .delete:hover {
-    background-color: rgba(255, 0, 0, 0.493);
+    background-color: rgba(219, 40, 40, 0.493);
     border: none;
+    border-radius: 4px;
 }
 
 img {
@@ -413,4 +420,18 @@ img {
 .render-size {
     font-size: 10px;
     color: gray;
+}
+
+a:hover {
+    color: rgb(63, 59, 59);
+}
+img {
+    opacity: 0.97;
+}
+img:hover {
+
+    transform: scale(1.02);
+    opacity: 1.0;
+
+
 }

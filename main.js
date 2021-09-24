@@ -8,44 +8,6 @@ function renderAccumulator(accumulator) {
                                 </p>`;
 }
 
-///FILTRO DE BUSQUEDA
-function filterSize(tag){
-
-    $(tag).on("click", function (e) {
-
-        let filterCheck = products.filter( ptalle => ptalle.size == e.target.value);
-        $('.gridproducts').empty();
-        filterCheck.forEach(element => {
-            $('.gridproducts').append(`
-            <article class="${element.class}">
-            <img src="${element.img}" alt="${element.id}">
-            <h6>${element.description.toUpperCase()}</h6>
-            <p class="render-size"> Talle ${element.size}</p>
-            <p>$${element.price}</p>
-            <button class="button-buy" value="${element.id}">BUY</button>
-            </article>`
-            )});
-        });
-}
-
-function filterDescription(tag){
-
-    $(tag).on("click", function (e) {
-        
-        let filterCheckDesc = products.filter(pdesc => pdesc.description == e.target.value);
-        $('.gridproducts').empty();
-        filterCheckDesc.forEach(elementdesc => {
-            $('.gridproducts').html(`
-            <article class="${elementdesc.class}">
-            <img src="${elementdesc.img}" alt="${elementdesc.id}">
-            <h6>${elementdesc.description.toUpperCase()}</h6>
-            <p class="render-size"> Talle ${elementdesc.size}</p>
-            <button class="button-buy" value="${elementdesc.id}">BUY</button>
-            </article>`
-            )});
-        });
-}
-
 function dataPedido () {
 
     $('.producto-pedido').append(` ${cart.length} PRODUCTOS $${total} `);
@@ -62,9 +24,7 @@ function dataPedido () {
     $('.total-pedido').append(` TOTAL $${total}`);
     $('.iva-pedido').append(` IVA incluido $${total * 0.21} `);
 }
-
     //Renderizar nombre
-
         swal("Bienvenido/a, ingrese su nombre para comprar:", {
         content: "input",
         })
@@ -95,7 +55,7 @@ function renderCart (product) {
     row.appendChild(td);
 
     td = document.createElement('td');
-    td.innerHTML = product.price;
+    td.innerHTML = `$${product.price}`;
     row.appendChild(td);
 
     td = document.createElement('td');
@@ -103,6 +63,7 @@ function renderCart (product) {
     row.appendChild(td);
 
     cartindex.appendChild(row);
+
 }
 
 function renderDelete () {
@@ -110,6 +71,8 @@ function renderDelete () {
     let row = document.querySelector('tr');
     cartindex.removeChild(row);
 }
+
+
 
 const products = [
 
@@ -139,14 +102,6 @@ products.forEach(product => {
 
 container.innerHTML = html;
 
-filterSize('#s');
-filterSize('#m');
-filterSize('#l');
-
-filterDescription('#blouse');
-filterDescription('#skirt');
-filterDescription('#purse');
-
 let cart = [];
 let accumulator = 0;
 
@@ -154,7 +109,7 @@ let buyButtons = document.getElementsByClassName('button-buy');
 //Bucle botones de comprar
 for (const button of buyButtons) {
 
-        button.addEventListener('click', function (event) {
+        button.addEventListener('click', function buy (event) {
             //Agregar al carrito productos y renderizarlos
                 let selectedProduct = products.find( x => x.id == event.target.value);
                 cart.push(selectedProduct);
@@ -193,7 +148,6 @@ $(".button-checkout").one("click", function (e) {
 
         for (let i = 0; i < cart.length; i++) {
             total += cart[i].price;
-            console.log(total);
         }
 
         if (total === 0 || cart.length === 0) {
@@ -218,9 +172,7 @@ $(".button-checkout").one("click", function (e) {
     $('.resumen-pedido').animate({
                                 fontSize: "15px",
                                 },
-                                2000, function(){console.log('fin')
-                            });
-
+                                2000);
 });
 
 $('.submit').on("click", function(e) {
@@ -281,14 +233,19 @@ emptyButton.addEventListener('click', function() {
         })
         
         $(".containercart").slideUp(1000);
-        $(".containergrid").css("filter", "blur(0px)")
-        clicks--;;
+        $(".containergrid").css("filter", "blur(0px)");
+        clicks--;
         cart = [];
         accumulator = 0;
         renderAccumulator(accumulator);
-
+        
+        
     } else {
             cart = [];
+            clicks--;
+            $(".containercart").slideUp(1000);
+            $(".containergrid").css("filter", "blur(0px)");
+
             let td = document.getElementsByTagName('td');
             for (const td1 of td) {
                     td1.parentNode.remove();
@@ -323,11 +280,8 @@ $(document).ready(function(){
     $("a").on('click', function(event) {
       //
     if (this.hash !== "") {
-        //
         event.preventDefault();
-        //
-        var hash = this.hash;
-
+        let hash = this.hash;
         $('html, body').animate({
         scrollTop: $(hash).offset().top
         }, 800, function(){
@@ -354,15 +308,7 @@ $('#cartMenu').on('click', function(e){
     }
 });
 
-$('.vendedor').one('click', function() {
-    const urlGET = 'https://hp-api.herokuapp.com/api/characters';
-    $.get (urlGET, function(answer, estado) {
-        if (estado === "success") {
-            let miData = answer;
-                $('.vendedor-asignado').append(`<p>${miData[1].name} es tu vendedor asignado</p>`);
-        }
-    })
-})
+
 
 
 

@@ -7,202 +7,140 @@
     <title>Js</title>
 
 <link rel="stylesheet" href="estilos.css">
-
 </head>
+
+
 <body>
 
-    <div id="cartlogo" class="cartlogo1">
-        <div class="welcome">
-            <!--name-->
+        <div id="cartlogo" class="cartlogo1">
+            <div class="welcome">
+            </div>
+
+                <div style="position:relative;">
+                    <img class="cartlogo" type="button" src="img/cart1.png" alt="cart">
+                    <span id="contador">
+                    </span>
+                </img>
+            </div>
         </div>
 
-        <!-- <a href="#cart"> -->
-            <div style="position:relative;">
-            <!-- <button id="button-cart"> -->
-                <img class="cartlogo" type="button" src="img/cart1.png" alt="cart">
-            <!-- </button> -->
-                <span id="contador">
+    <section id="cart" class="containercart" style="display:none;">
+        <table id="cart-index">
+                <tr>
+                    <th>ITEMS</th>
+                    <th>DESCRIPTION</th>
+                    <th>SUBTOTAL</th>
+                    <th>DELETE</th>
+                </tr>
+        </table>
 
-                </span>
-            <!--contador-->
-            </img>
+        <div class="botones-section">
+            <a href="#form">
+                <button class="button-checkout">CHECKOUT</button>
+            </a>
+            <button class="empty-cart">EMPTY CART</button>
         </div>
-        <!-- </a> -->
+    </section> 
+
+
+    <div class="containergrid">
+        <header>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#home">HOME</a>
+                        </li>
+                        <li>
+                            <a href="#home">SALE</a>
+                        </li>
+                        <li>
+                            <a type="button" id="cartMenu">CART</a>
+                        </li>
+                    </ul>
+                </nav>    
+        </header>
+
+        <section class="gridproducts" id="home">
+        </section>
+
+        <section class="pago-resumen">
+    <section class="form" style="display: none;">
+        <form id="form">
+            <h6>COMPLETA TU PAGO</h6>
+            <div>
+                <label for="name"> NAME:
+                    <input type="text" id="input-name" name="user" placeholder="Nombre y apellido">
+                </label>
+            </div>
+            <div>
+                <label for="email"> EMAIL:
+                    <input type="email" id="input-email" placeholder="example@abc.com">
+                </label>
+            </div>
+            <div>
+                <label for="card"> CARD NUMBER:
+                    <input type="number" id="input-card" placeholder="**** **** **** ****">
+                </label>
+            </div>
+            <div>
+                <label for="expiration"> EXPIRATION
+                    <input type="date" id="input-expiration" placeholder="01/21">
+                </label>
+            </div>
+            <div>
+                <label for="cvv"> CVV
+                    <input type="number" id="input-cvv" placeholder="123">
+                </label>
+            </div>
+            <div>
+                <label class="cuotas"> CUOTAS
+                </label>
+            </div>
+            <div>
+                <button type="submit" class="submit">PAGAR
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <section class="resumen-pedido" style="display: none;">
+        <div class="flex-resumen">
+            <h6 class="h6-resumen">RESUMEN DEL PEDIDO</h6>
+            <p class="producto-pedido">
+            </p>
+            <p class="entrega-pedido">
+            </p>
+            <p class="total-pedido">
+            </p>
+            <p class="iva-pedido">
+            </p>
+            <p class="envio-gratis">
+            </p>
+        </div>
+    </section>
+        </section>
+
+        <footer class="footer">
+            <div>
+                <p>SOCIAL</p>
+                <p>CONTACT</p>
+                <p>ABOUT</p>
+            </div>
+        </footer>
     </div>
 
+    <script async
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
 
-<section id="cart" class="containercart" style="display:none;">
-    
-    
-    <table id="cart-index">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+    </script>
 
-        
-        <!-- <tbody id="tbody"> -->
-        <tr>
-            <th>ITEMS</th>
-            <th>DESCRIPTION</th>
-            <th>SUBTOTAL</th>
-            <th>DELETE</th>
-        </tr>
-
-    </table>
-
-<!-- <p>El total a abonar es $ </p> -->
-<div class="botones-section">
-    <a href="#form"><button class="button-checkout">CHECKOUT</button></a>
-<button class="empty-cart">EMPTY CART</button> 
-</div>
-
-</section> 
-
-
-<div class="containergrid">
-    <header>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#home">HOME</a>
-                    </li>
-                    <li>
-                        <a href="#home">SALE</a>
-                    </li>
-                    <li>
-                        <a type="button" id="cartMenu">CART</a>
-                    </li>
-                </ul>
-            </nav>    
-    </header>
-
-<section class="filter" style="background-color: rosybrown;">
-    <form id="filterCSS">
-        <div class="sizes">
-            <h6>Talle</h6>
-            <div>
-                <label>S
-                    <input type="checkbox" name="s" id="s" value="S">
-                </label>
-            </div>
-            <div>
-                <label>M
-                    <input type="checkbox" name="m" id="m" value="M">
-                </label>
-            </div>
-            <div>
-                <label for="">L
-                    <input type="checkbox" name="l" id="l" value="L">
-                </label>
-            </div>
-        </div>
-
-        <div class="categories">
-        <h6>Categoria</h6>
-            <div>
-                <label>Blouse
-                    <input type="checkbox" name="blouse" id="blouse" value="Blouse">
-                </label>
-            </div>
-            <div>
-                <label>Skirt
-                    <input type="checkbox" name="skirt" id="skirt" value="Skirt">
-                </label>
-            </div>
-            <div>
-                <label for="">Pourse
-                    <input type="checkbox" name="purse" id="purse" value="Purse">
-                </label>
-            </div>
-</div>
-    </form>
-</section>    
-
-<section class="gridproducts" id="home">
-
-</section>
-
-<section class="pago-resumen">
-<section class="form" style="display: none;">
-    <form id="form">
-        <h6>COMPLETA TU PAGO</h6>
-        <div>
-            <label for="name"> NAME:
-                <input type="text" id="input-name" name="user" placeholder="Nombre y apellido">
-            </label>
-        </div>
-        <div>
-            <label for="email"> EMAIL:
-                <input type="email" id="input-email" placeholder="example@abc.com">
-            </label>
-        </div>
-        <div>
-            <label for="card"> CARD NUMBER:
-                <input type="number" id="input-card" placeholder="**** **** **** ****">
-            </label>
-        </div>
-        <div>
-            <label for="expiration"> EXPIRATION
-                <input type="date" id="input-expiration" placeholder="01/21">
-            </label>
-        </div>
-        <div>
-            <label for="cvv"> CVV
-                <input type="number" id="input-cvv" placeholder="123">
-            </label>
-        </div>
-        <div>
-            <label class="cuotas"> CUOTAS
-            </label>
-        </div>
-        <div>
-            <button type="submit" class="submit">PAGAR
-            </button>
-        </div>
-    </form>
-</section>
-
-<section class="resumen-pedido" style="display: none;">
-    <div class="flex-resumen">
-        <h6 class="h6-resumen">RESUMEN DEL PEDIDO</h6>
-        <p class="producto-pedido">
-        </p>
-        <p class="entrega-pedido">
-        </p>
-        <p class="total-pedido">
-        </p>
-        <p class="iva-pedido">
-        </p>
-        <p class="envio-gratis">
-        </p>
-    </div>
-</section>
-</section>
-
-<footer class="footer">
-    <div>
-        <p>SOCIAL</p>
-        <p>CONTACT</p>
-        <p>ABOUT</p>
-        <button class="vendedor">Solicitar un vendedor
-        </button>
-
-        <div class="vendedor-asignado">
-        </div>
-
-    </div>
-</footer>
-</div>
-
-<script async
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous">
-</script>
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
-</script>
-
-<script async
-    src="main.js">
-</script>
+    <script async
+        src="main.js">
+    </script>
 
 </body>
 </html>
