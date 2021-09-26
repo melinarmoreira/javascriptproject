@@ -1,335 +1,242 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 header {
-    color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-
-} 
-
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 footer {
-    height: 100px;
-    vertical-align: middle;
+  height: 100px;
+  vertical-align: middle;
 }
-
 footer div {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
 }
-
 .footer div p {
-    padding: 30px 10px;
+  padding: 30px 10px;
 }
-
 body {
-    background-color: rgba(252, 238, 238, 0.877);
-    letter-spacing: .1em;
-    font-weight: lighter;
-    font-family: 'sackersGothic-light';
-    font-size: 21px;
-    color: black;
-    font-family: 'Tinos', serif;
+  background-color: rgba(252, 238, 238, 0.877);
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+  font-family: "sackersGothic-light";
+  font-size: 21px;
+  color: black;
+  font-family: "Tinos", serif;
 }
-
 nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-decoration: none;
-    color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
 }
-
 nav {
-    height: 80px;
-    /* vertical-align: middle;  */
-    display: flex;
-    justify-content: center;
-    /* align-items: center;  */
-    
+  height: 80px;
+  display: flex;
+  justify-content: center;
 }
-
 li {
-    list-style: none;
-    padding: 0px 10px;
+  list-style: none;
+  padding: 0px 10px;
 }
-
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
-
 .cartlogo1 {
-    /* display: flex; */
-    /* justify-content: flex-end; */
-    /* align-items: center; */
-    /* display: flex; */
-    /* align-items: flex-end;  */
-    display: flex;
-    justify-content: flex-end;
-    
-
+  display: flex;
+  justify-content: flex-end;
 }
 .cartlogo {
-    max-width: 35px;
-    padding: 20px 15px;
+  max-width: 35px;
+  padding: 20px 15px;
 }
 .welcome {
-    
-    padding-top: 35px;
-    font-size: 15px;
+  padding-top: 35px;
+  font-size: 15px;
 }
-
 .gridproducts {
-    margin-left: 10%;
-    margin-right: 10%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-template-areas:
-    'grid1 grid2'
-    'grid3 grid4'
-    'grid5 grid6';
+  margin-left: 10%;
+  margin-right: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-template-areas:
+    "grid1 grid2"
+    "grid3 grid4"
+    "grid5 grid6";
 }
-
 .gridproducts img {
-    max-width: 100%;
+  max-width: 100%;
 }
-
 .grid1 {
-    grid-area: grid1;
+  grid-area: grid1;
 }
-
 .grid2 {
-    grid-area: grid2;
+  grid-area: grid2;
 }
-
 .grid3 {
-    grid-area: grid3;
+  grid-area: grid3;
 }
-
 .grid4 {
-    grid-area: grid4;
+  grid-area: grid4;
 }
-
 .grid5 {
-    grid-area: grid5;
+  grid-area: grid5;
 }
 .grid6 {
-    grid-area: grid6;
+  grid-area: grid6;
 }
-
-
-
 article {
-    text-align: center;
-    padding: 20px 40px;
-    line-height: 30px;
+  text-align: center;
+  padding: 20px 40px;
+  line-height: 30px;
 }
-
 button {
-    padding: 10px 10px;
-    margin: 10px 0px;
+  padding: 10px 10px;
+  margin: 10px 0px;
 }
-
 button:hover {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
-
 .botones-section {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
 }
 .button-checkout {
-
-    max-width: 100px;
-    font-size: 10px;
+  max-width: 100px;
+  font-size: 10px;
 }
-
 .empty-cart {
-
-    font-size: 10px;
-    max-width: 100px;
-
+  font-size: 10px;
+  max-width: 100px;
 }
-
 .containercart {
-    display: flex;
-    flex-direction: column;
-    margin-left: 70%;
-    margin-right: 2%;
-    font-size: 11px;
-    position: absolute;
-    background-color: white;
-    padding: 10px 10px;
-    border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 70%;
+  margin-right: 2%;
+  font-size: 11px;
+  position: absolute;
+  background-color: white;
+  padding: 10px 10px;
+  border-radius: 5%;
 }
-
 h4 {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
-
-td, th {
-    text-align: center;
-    padding: 10px 10px;
+td,
+th {
+  text-align: center;
+  padding: 10px 10px;
 }
-
 @media (min-width: 320px) and (max-width: 480px) {
-    .gridproducts {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%;
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto auto auto;
-        grid-column-gap: 10px;
-        grid-template-areas:
-        'grid1'
-        'grid2'
-        'grid3 '
-        'grid4'
-        'grid5'
-        'grid6';
-    }
-
-    .gridproducts {
-        margin-left: auto;
-    }
-
-    .containergrid {
-        display: grid;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto auto;
-        grid-template-areas: 
-                                'header'
-                            'gridproducts'
-                            'pago'
-                            'resumen'
-                                'footer';
-    
-    }
-
-    .grid1{
-        grid-area: grid1;
-    }
-    .grid2{
-        grid-area: grid2;
-    }
-    .grid3{
-        grid-area: grid3;
-    }
-    .grid4{
-        grid-area: grid4;
-    }
-    .grid5{
-        grid-area: grid5;
-    }
-    .grid6{
-        grid-area: grid6;
-    } 
-    
-    header {
-        grid-area: header;
-    }
-    .gridproducts {
-        grid-area: gridproducts;
-    }
-    .containercart {
-        grid-area: cart;
-        max-width: 99%;
-    }
-    
-    .footer {
-        grid-area: footer;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 20%;
-        padding: 0px 20px;
-    }
-
-
-    .containercart {
-        margin-left: auto;
-    }
-
-    .resumen-pedido {
-        min-width: 60%;
-        height: fit-content;
-        margin: 10% 10%;
-        padding: 10px;
-        font-size: 13px;
-        line-height: 20px;
-    }
-        .form {
-            width: 80%;
-            font-size: 13px;
-            padding: 30px 10px;
-            background-color: white;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 30px;
-        }
-
-
+  .gridproducts {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-column-gap: 10px;
+    grid-template-areas:
+      "grid1"
+      "grid2"
+      "grid3 "
+      "grid4"
+      "grid5"
+      "grid6";
+  }
+  .gridproducts {
+    margin-left: auto;
+  }
+  .containergrid {
+    display: grid;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "header"
+      "gridproducts"
+      "pago"
+      "resumen"
+      "footer";
+  }
+  .grid1 {
+    grid-area: grid1;
+  }
+  .grid2 {
+    grid-area: grid2;
+  }
+  .grid3 {
+    grid-area: grid3;
+  }
+  .grid4 {
+    grid-area: grid4;
+  }
+  .grid5 {
+    grid-area: grid5;
+  }
+  .grid6 {
+    grid-area: grid6;
+  }
+  header {
+    grid-area: header;
+  }
+  .gridproducts {
+    grid-area: gridproducts;
+  }
+  .containercart {
+    grid-area: cart;
+    max-width: 99%;
+  }
+  .footer {
+    grid-area: footer;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20%;
+    padding: 0px 20px;
+  }
+  .containercart {
+    margin-left: auto;
+  }
+  .resumen-pedido {
+    min-width: 60%;
+    height: fit-content;
+    margin: 10% 10%;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .form {
+    width: 80%;
+    font-size: 13px;
+    padding: 30px 10px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 30px;
+  }
 }
-
 
 @media (min-width: 481px) {
-
-    .form {
-        width: fit-content;
-        padding: 30px 30px;
-        background-color: white;
-        max-width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10%;
-        margin-bottom: 10%;
-        grid-area: pago;
-    }
-
-    .resumen-pedido {
-        background-color: white;
-        width: fit-content;
-        grid-area: resumen;
-        height: fit-content;
-        margin-top: 30%;
-        padding: 35px;
-        font-size: 15px;
-        line-height: 20px;
-        margin-right: 40%;
-    }
-
-    
-.pago-resumen {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "pago resumen";
-} 
-
-
-}
-
-.form {
+  .form {
     width: fit-content;
     padding: 30px 30px;
     background-color: white;
@@ -339,83 +246,9 @@ td, th {
     margin-top: 10%;
     margin-bottom: 10%;
     grid-area: pago;
-}
+  }
 
-h6 {
-    text-align: center;
-}
-input, select, option {
-    margin: 10px;
-    padding: 5px;
-    width: 80%;
-    font-size: 15px;
-}
-
-.submit {
-    margin-left: 35%;
-    padding: 10px 20px;
-}
-
-label {
-    margin: 10px;
-}
-
-.imgcart {
-    max-width: 100%;
-}
-
-#total {
-    font-size: 15px;
-    padding: 20px 50px;
-    width: 100%;
-    display: inline;
-}
-
-#contador {
-    position: absolute;
-}
-
-.contador-style {
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: normal;
-    position: absolute;
-    right: 32px; 
-    top:10px;
-    font-size: 12px;
-    background-color: red;
-    color: white;
-    text-align: center;
-    border-radius: 100%;
-    padding: 1.5px 1px;
-    height: fit-content;
-    width: 20px;
-    margin-bottom: 200px;
-
-}
-
-.deletepic {
-    max-width: 20px;
-}
-.delete {
-    border: none;
-    max-height: 25px;
-}
-.delete:hover {
-    background-color: rgba(219, 40, 40, 0.493);
-    border: none;
-    border-radius: 4px;
-}
-
-img {
-    max-height: 400px;
-}
-
-#button-cart {
-    border: none;
-    height: fit-content;
-}
-
-.resumen-pedido {
+  .resumen-pedido {
     background-color: white;
     width: fit-content;
     grid-area: resumen;
@@ -425,56 +258,135 @@ img {
     font-size: 15px;
     line-height: 20px;
     margin-right: 40%;
+  }
+
+  .pago-resumen {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "pago resumen";
+  }
 }
 
-.flex-resumen {
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: nowrap; */
-    text-align: left;
+.form {
+  width: fit-content;
+  padding: 30px 30px;
+  background-color: white;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  grid-area: pago;
 }
-
-.iva-pedido {
-    color: gray;
-    font-size: 10px;
+h6 {
+  text-align: center;
 }
-
-.envio-gratis {
-    font-size: rgb(199, 79, 99);
-    font-style: italic;
-    font-size: 10px;
+input,
+select,
+option {
+  margin: 10px;
+  padding: 5px;
+  width: 80%;
+  font-size: 15px;
 }
-
-.h6-resumen {
-    padding: 15px;
+.submit {
+  margin-left: 35%;
+  padding: 10px 20px;
 }
-
-.categories .sizes {
-    display: flex;
-    flex-direction: column;
-
+label {
+  margin: 10px;
 }
-
-.filter {
-    max-width: 50%;
-    margin: 0px auto;
+.imgcart {
+  max-width: 100%;
 }
-
-.render-size {
-    font-size: 10px;
-    color: gray;
+#total {
+  font-size: 15px;
+  padding: 20px 50px;
+  width: 100%;
+  display: inline;
 }
-
-a:hover {
-    color: rgb(63, 59, 59);
+#contador {
+  position: absolute;
+}
+.contador-style {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  position: absolute;
+  right: 32px;
+  top: 10px;
+  font-size: 12px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 16px;
+  padding: 3px 1px;
+  height: fit-content;
+  width: 20px;
+  margin-bottom: 200px;
+}
+.deletepic {
+  max-width: 20px;
+}
+.delete {
+  border: none;
+  max-height: 25px;
+}
+.delete:hover {
+  background-color: rgba(219, 40, 40, 0.493);
+  border: none;
+  border-radius: 4px;
 }
 img {
-    opacity: 0.97;
+  max-height: 400px;
+}
+#button-cart {
+  border: none;
+  height: fit-content;
+}
+.resumen-pedido {
+  background-color: white;
+  width: fit-content;
+  grid-area: resumen;
+  height: fit-content;
+  margin-top: 30%;
+  padding: 35px;
+  font-size: 15px;
+  line-height: 20px;
+  margin-right: 40%;
+}
+.flex-resumen {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.iva-pedido {
+  color: gray;
+  font-size: 10px;
+}
+.envio-gratis {
+  font-size: rgb(199, 79, 99);
+  font-style: italic;
+  font-size: 10px;
+}
+.h6-resumen {
+  padding: 15px;
+}
+.categories .sizes {
+  display: flex;
+  flex-direction: column;
+}
+.filter {
+  max-width: 50%;
+  margin: 0px auto;
+}
+a:hover {
+  color: rgb(63, 59, 59);
+}
+img {
+  opacity: 0.97;
 }
 img:hover {
-
-    transform: scale(1.02);
-    opacity: 1.0;
-
-
+  transform: scale(1.02);
+  opacity: 1;
 }
